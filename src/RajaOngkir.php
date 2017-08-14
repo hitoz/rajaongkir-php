@@ -2,14 +2,14 @@
 
 /**
  * RajaOngkir PHP Client
- * 
+ *
  * Class PHP untuk mengkonsumsi API RajaOngkir
  * Berdasarkan dokumentasi RajaOngkir http://rajaongkir.com/dokumentasi
- * 
+ *
  * @author Damar Riyadi <damar@tahutek.net>
  */
 
-namespace hok00age;
+namespace hitoz;
 
 class RajaOngkir {
 
@@ -128,7 +128,7 @@ class RajaOngkir {
         $params['province'] = $province_id;
         return \Unirest::get(self::$base_url . "internationalOrigin", array(), $params);
     }
-	
+
     /**
      * Fungsi untuk mendapatkan data ongkos kirim internasional
      * @param integer $origin ID kota/kecamatan asal
@@ -148,10 +148,10 @@ class RajaOngkir {
         }
         return \Unirest::post(self::$base_url . "internationalCost", array(), http_build_query($params));
     }
-	
+
     /**
      * Fungsi untuk mendapatkan data status pengiriman
-     * @param integer $waybill no resi pengiriman 
+     * @param integer $waybill no resi pengiriman
      * @param string $courier Kode kurir
      * @return object Object yang berisi informasi response, terdiri dari: code, headers, body, raw_body.
      */
